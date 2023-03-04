@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Unit Converter</title>
+</head>
+
+<body>
+    <main id="card-container">
+        <section id="input-section">
+            <h1>Metric/Imperial Unit Conversion</h1>
+            <input type="text" id="input-el">
+            <input type="button" id="convert-btn" value="Convert">
+        </section>
+
+        <section id="output-section">
+            <div class="outputs-container">
+                <h3 class="output-title">Length (Meter/Feet)</h3>
+                <div class="output-results">
+                    <div id="m-field"></div>
+                    <span class="col-divider"></span>
+                    <div id="ft-field"></div>
+                </div>
+            </div>
+            <div class="outputs-container">
+                <h3 class="output-title">Volume (Liters/Gallons)</h3>
+                <div class="output-results">
+                    <div id="l-field"></div>
+                    <span class="col-divider"></span>
+                    <div id="gal-field"></div>
+                </div>
+            </div>
+            <div class="outputs-container">
+                <h3 class="output-title">Mass (Kilograms/Pounds)</h3>
+                <div class="output-results">
+                    <div id="kg-field"></div>
+                    <span class="col-divider"></span>
+                    <div id="lb-field"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src=" index.js"></script>
+</body>
+<footer>
+    <p>Coded by Alpha Bah for Scrimba Frontend Dev Bootcamp</p>
+</footer>
+
+</html>
