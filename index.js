@@ -12,6 +12,8 @@ const lbField = document.getElementById("lb-field")
 const convertBtn = document.getElementById("convert-btn")
 const colDividers = document.querySelectorAll(".col-divider")
 
+inputEl.value = ''
+
 convertBtn.addEventListener("click", function () {
     // First, making sure we grab the value that the user entered and that it is a number
 
