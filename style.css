@@ -9,48 +9,60 @@ body {
 }
 
 h1 {
+    font-size: 1.25em;
     color: white;
     font-weight: 700;
 }
 
 h3 {
     color: #ccc1ff;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 1em;
 }
 
 p {
     color: white;
     font-weight: 300;
+    font-size: 0.9em;
 }
 
 #card-container {
     margin: 2em auto;
     background-color: #1f2937;
-    width: 34em;
-    height: 43.5em;
+    width: 95%;
+    height: 70%;
+}
+
+@media screen and (min-width: 768px) {
+    #card-container {
+        width: 35%;
+        height: 45%;
+    }
 }
 
 #input-section {
     background-color: #6943ff;
-    height: 18em;
+    height: 20%;
+    padding: 1.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
 }
 
 #input-el {
-    max-width: 2em;
-    max-height: 5em;
+    width: 2em;
+    height: 1em;
     border: 1px solid #b295ff;
     border-radius: 4px;
     outline: none;
     background-color: #6943ff;
     color: white;
-    padding: 0.5em;
-    font-weight: 700;
-    font-size: 2em;
+    padding: 0.25em;
+    font-weight: 800;
+    font-size: 2.5em;
     text-align: center;
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
 }
 
 #convert-btn {
@@ -65,17 +77,19 @@ p {
 }
 
 #output-section {
-    height: calc(43.5em - 18em);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    gap: 1em;
+    margin: 1em auto;
+    padding-bottom: 1em;
 }
 
 .outputs-container {
     background-color: #273549;
-    width: 31.25em;
-    height: 6.75em;
+    width: 90%;
     margin: 0 auto;
+    padding: 0.25em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,6 +103,16 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    overflow: scroll;
+    width: 80vw;
+    padding: 0 0.25em;
+}
+
+@media screen and (min-width: 768px) {
+    .output-results {
+        width: 30vw;
+    }
 }
 
 .col-divider {
@@ -97,9 +121,9 @@ p {
 
 .col-divider.display {
     display: inline-block;
-    height: 20px;
+    height: 1.125em;
     border: 1px solid white;
-    margin: auto 10px;
+    margin: auto 0.5em;
 }
 
 footer {

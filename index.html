@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Unit Converter</title>
 </head>
@@ -16,8 +16,8 @@
     <main id="card-container">
         <section id="input-section">
             <h1>Metric/Imperial Unit Conversion</h1>
-            <input type="text" id="input-el">
-            <input type="button" id="convert-btn" value="Convert">
+            <input min="1" label="number-input-field" id="input-el">
+            <input type="button" value="Convert" label="convert-button" id="convert-btn">
         </section>
 
         <section id="output-section">
@@ -46,6 +46,7 @@
                 </div>
             </div>
         </section>
+
     </main>
     <footer>
         <p>Coded by Alpha Bah for Scrimba Frontend Dev Bootcamp</p>

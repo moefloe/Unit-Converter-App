@@ -12,35 +12,66 @@ const lbField = document.getElementById("lb-field")
 const convertBtn = document.getElementById("convert-btn")
 const colDividers = document.querySelectorAll(".col-divider")
 
-inputEl.value = ''
+inputEl.value = 1
 
-convertBtn.addEventListener("click", function () {
-    // First, making sure we grab the value that the user entered and that it is a number
+convertBtn.addEventListener('click', function () {
 
-    let inputElValue = parseFloat((inputEl).value)
+    // The event listener first checks that the user is entering a number type
 
-    // Now doing the conversion calculations and rounding them to 3 decimal places
-
-    let meterConvert = (inputElValue * 3.281).toFixed(3)
-    mField.innerHTML = `<p> ${inputElValue} meters = ${meterConvert} feet</p>`
-
-    let ftConvert = (inputElValue / 3.281).toFixed(3)
-    ftField.innerHTML = `<p> ${inputElValue} feet = ${ftConvert} meters`
-
-    let literConvert = (inputElValue * 0.264).toFixed(3)
-    lField.innerHTML = `<p> ${inputElValue} liters = ${literConvert} gallons</p>`
-
-    let galConvert = (inputElValue / 0.264).toFixed(3)
-    galField.innerHTML = `<p> ${inputElValue} gallons = ${galConvert} liters</p>`
-
-    let kgConvert = (inputElValue * 2.204).toFixed(3)
-    kgField.innerHTML = `<p> ${inputElValue} kilograms = ${kgConvert} pounds</p>`
-
-    let lbConvert = (inputElValue / 2.204).toFixed(3)
-    lbField.innerHTML = `<p> ${inputElValue} kilograms = ${lbConvert} pounds</p>`
-
-    // Adding the col-dividers to my output display
-
-    for (let i = 0; i < colDividers.length; i++)
-        colDividers[i].classList.add("display")
+    if (isNaN(Number(inputEl.value))) {
+        alert('Please enter a valid number!')
+    }
+    else if (((Number(inputEl.value) <= 0))) {
+        alert('Please enter a number greater than 0!')
+    }
+    else {
+        render()
+    }
 })
+
+// Setting the conversions for the different units
+
+function meterToFeet() {
+    return parseFloat(inputEl.value * 3.281).toFixed(3)
+}
+
+function feetToMeter() {
+    return parseFloat(inputEl.value / 3.281).toFixed(3)
+}
+
+function literToGallon() {
+    return parseFloat(inputEl.value * 0.264).toFixed(3)
+}
+
+function gallonToLiter() {
+    return parseFloat(inputEl.value / 0.264).toFixed(3)
+}
+
+function kilogramToPound() {
+    return parseFloat(inputEl.value * 2.204).toFixed(3)
+}
+
+function poundToKilogram() {
+    return parseFloat(inputEl.value / 2.204).toFixed(3)
+}
+
+// Function to load the page and display our results
+
+function render() {
+    mField.innerHTML = `<p> ${inputEl.value} meters = ${meterToFeet()} feet</p>`
+    ftField.innerHTML = `<p> ${inputEl.value} feet = ${feetToMeter()} meters`
+    lField.innerHTML = `<p> ${inputEl.value} liters = ${literToGallon()} gallons</p>`
+    galField.innerHTML = `<p> ${inputEl.value} gallons = ${gallonToLiter()} liters</p>`
+    kgField.innerHTML = `<p> ${inputEl.value} kilos = ${kilogramToPound()} pounds</p>`
+    lbField.innerHTML = `<p> ${inputEl.value} pounds = ${poundToKilogram()} kilos</p>`
+
+}
+render()
+
+// Function to add our col dividers 
+
+for (let i = 0; i < colDividers.length; i++) {
+    colDividers[i].classList.add('display')
+}
+
+
